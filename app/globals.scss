@@ -1,0 +1,124 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  background-color: $white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+
+  .nav {
+    @include flex-between;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $primary-color;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: $text-color;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.main-content {
+  min-height: calc(100vh - 200px);
+  padding: 2rem 0;
+}
+
+.footer {
+  background-color: $white;
+  padding: 2rem 0;
+  margin-top: 4rem;
+  text-align: center;
+  border-top: 1px solid $border-color;
+}
+
+.btn {
+  @include button-base;
+
+  &.primary {
+    background-color: $primary-color;
+    color: white;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  &.secondary {
+    background-color: $bg-color;
+    color: $text-color;
+
+    &:hover {
+      background-color: darken($bg-color, 5%);
+    }
+  }
+}
+
+.card {
+  background-color: $white;
+  border-radius: $border-radius;
+  padding: 2rem;
+  @include card-shadow;
+  margin-bottom: 2rem;
+
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: $text-color;
+  }
+
+  .card-content {
+    color: $secondary-color;
+    line-height: 1.6;
+  }
+}
+
+@include responsive(mobile) {
+  .header .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .header .nav .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
