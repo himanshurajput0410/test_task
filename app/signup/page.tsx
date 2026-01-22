@@ -275,9 +275,8 @@ export default function SignupPage() {
                 width={209}
                 height={74}
                 priority
-                quality={100}
+                quality={90}
                 className={styles.brandLogo}
-                loading="eager"
               />
             </Link>
 
@@ -305,9 +304,8 @@ export default function SignupPage() {
               width={40}
               height={40}
               priority
-              quality={100}
+              quality={90}
               className={styles.googleIcon}
-              loading="eager"
             />
           </button>
 
@@ -542,9 +540,8 @@ export default function SignupPage() {
               width={400}
               height={360}
               priority
-              quality={100}
+              unoptimized
               className={styles.sideImage}
-              loading="eager"
             />
           </div>
         </aside>
@@ -556,7 +553,7 @@ export default function SignupPage() {
           alt="Chat Support"
           width={100}
           height={100}
-          quality={100}
+          unoptimized
           className={styles.chatImage}
           loading="lazy"
         />
